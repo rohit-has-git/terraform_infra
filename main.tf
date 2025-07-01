@@ -1,6 +1,6 @@
 terraform {
     backend "s3" {
-        bucket = "todayrobuck"
+        bucket = "todayrobu"
         key = "terraform.tfstate"
         region = "us-west-1"
     }
@@ -108,7 +108,7 @@ resource "aws_route_table_association" "private_2" {
 }
 
 resource "aws_security_group" "eks_nodes" {
-    name = "zhle-udvh-vagm"
+    name = "gle-uvh-vam"
     description = "Security group for EKS nodes"
     vpc_id = aws_vpc.main.id
     ingress {
@@ -128,7 +128,7 @@ resource "aws_security_group" "eks_nodes" {
 
 module "eks" {
     source = "terraform-aws-modules/eks/aws"
-    cluster_name = "wlpyv-mhemlt"
+    cluster_name = "wlv-mhlt"
     cluster_version = "1.29"
     cluster_endpoint_public_access = true
     vpc_id = aws_vpc.main.id
