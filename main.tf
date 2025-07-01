@@ -29,7 +29,7 @@ resource "aws_vpc_dhcp_options" "dns" {
 
 resource "aws_vpc_dhcp_options_association" "main" {
     vpc_id = aws_vpc.main.id
-    dhcp_options_id = aws_dhcp_options.dns.id
+    dhcp_options_id = aws_vpc_dhcp_options.dns.id
 }
 
 resource "aws_internet_gateway" "gw" {
