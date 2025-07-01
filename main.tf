@@ -128,7 +128,7 @@ resource "aws_security_group" "eks_nodes" {
 
 module "eks" {
     source = "terraform-aws-modules/eks/aws"
-    cluster_name = "new-cluster"
+    cluster_name = "ecm-cluster"
     cluster_version = "1.21"
     cluster_endpoint_public_access = true
     vpc_id = aws_vpc.main.id
