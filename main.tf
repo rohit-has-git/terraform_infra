@@ -138,7 +138,7 @@ module "eks" {
         default = {
             instance_type =  "t3.medium"
             desired_capacity = 2
-            min_size = 2
+            min_size = 1
             max_size = 3
             key_name = "akey"
             ami_type = "AL2_x86_64"
