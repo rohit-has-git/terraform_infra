@@ -23,11 +23,11 @@ resource "aws_vpc" "main" {
 
 }
 
-resource "aws_dhcp_options" "dns" {
+resource "aws_vpc_dhcp_options" "dns" {
     domain_name_servers = ["AmazonProvidedDNS"]
 }
 
-resource "aws_dhcp_options_association" "main" {
+resource "aws_vpc_dhcp_options_association" "main" {
     vpc_id = aws_vpc.main.id
     dhcp_options_id = aws_dhcp_options.dns.id
 }
