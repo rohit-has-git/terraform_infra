@@ -108,7 +108,7 @@ resource "aws_route_table_association" "private_2" {
 }
 
 resource "aws_security_group" "eks_nodes" {
-    name = "eks-nodes-sg"
+    name = "eks-no-sg"
     description = "Security group for EKS nodes"
     vpc_id = aws_vpc.main.id
     ingress {
@@ -128,7 +128,7 @@ resource "aws_security_group" "eks_nodes" {
 
 module "eks" {
     source = "terraform-aws-modules/eks/aws"
-    cluster_name = "er-newpr"
+    cluster_name = "mx-ner"
     cluster_version = "1.29"
     cluster_endpoint_public_access = true
     vpc_id = aws_vpc.main.id
@@ -139,7 +139,7 @@ module "eks" {
             instance_type =  "t3.medium"
             desired_capacity = 2
             min_size = 1
-            max_size = 3
+            max_size = 2
             key_name = "akey"
             ami_type = "AL2_x86_64"
         }
